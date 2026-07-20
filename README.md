@@ -46,8 +46,9 @@ all. All of it has been ported.
 
 ## What was ported
 
-`src/usd_native.cljc` is a direct 1:1 port of every constant from the
-original `src/lib.rs`:
+`src/usd_native.kotoba` preserves every constant from the original
+`src/lib.rs` through typed string getters compiled for restricted JavaScript
+and Wasm:
 
 | Rust const | Value |
 |---|---|
@@ -66,13 +67,8 @@ plus a smoke test.
 ## Usage
 
 ```clojure
-(require '[usd-native :as usd-native])
-
-usd-native/kami-name
-;; => "kami-usd-native"
-
-usd-native/supported-formats
-;; => ["usda" "usdc" "usdz"]
+(defn kami-name-value [] :string "kami-usd-native")
+(defn supported-format-0 [] :string "usda")
 ```
 
 ## Testing

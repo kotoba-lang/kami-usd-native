@@ -74,7 +74,7 @@ plus a smoke test.
 ## Testing
 
 ```sh
-clojure -M:test
+kbb -M:test
 ```
 
 ## License

@@ -1,6 +1,6 @@
 (ns usd-native.parity-test
   "Parity gate between `src/usd_native.kotoba` (the semantic authority) and
-  `src/usd_native.cljc` (the load path a Clojure/ClojureScript consumer requires).
+  `src/usd_native.cljk` (the load path a Clojure/ClojureScript consumer requires).
 
   Shape follows `kotoba-lang/css` (`css.kotoba-parity-test`), `kotoba-lang/dsl-core`
   and `kotoba-lang/async` (ADR-2608130900), and `kotoba-lang/postfx` (ADR-2608133600):
@@ -8,7 +8,7 @@
   same JVM, so nothing crosses a runtime boundary, and `kotoba-lang/compiler` stays a
   test-only dependency.
 
-  WHY THE .cljc EXISTS AT ALL. `e56fffc2` (2026-07-20) deleted `src/usd_native.cljc`
+  WHY THE .cljc EXISTS AT ALL. `e56fffc2` (2026-07-20) deleted `src/usd_native.cljk`
   and put the `.kotoba` at that path. A `.kotoba` is on no Clojure classpath, so
   `usd-native` stopped being loadable by every runtime this workspace ranks above the
   native path. The `.cljc` restored beside it is the load path; the `.kotoba` remains
